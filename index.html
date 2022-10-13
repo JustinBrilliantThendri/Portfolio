@@ -7,10 +7,31 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Portfolio</title>
-    <script>document.addEventListener("contextmenu", e => e.preventDefault(), false);</script>
+    <script>
+        function support(x){
+            if(x >= 1280){
+                document.getElementsByClassName("first")[0].style.display = "block";
+                document.getElementsByClassName("second")[0].style.display = "flex";
+                document.getElementsByClassName("third")[0].style.display = "flex";
+                document.getElementsByClassName("fourth")[0].style.display = "flex";
+                document.getElementsByClassName("fifth")[0].style.display = "flex";
+                document.getElementsByClassName("not-supported")[0].style.display = "none";
+            }else{
+                document.getElementsByClassName("first")[0].style.display = "none";
+                document.getElementsByClassName("second")[0].style.display = "none";
+                document.getElementsByClassName("third")[0].style.display = "none";
+                document.getElementsByClassName("fourth")[0].style.display = "none";
+                document.getElementsByClassName("fifth")[0].style.display = "none";
+                document.getElementsByClassName("not-supported")[0].style.display = "flex";
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="first">
+<body onload="support(this.innerWidth)" onresize="support(this.innerWidth)">
+    <div class="not-supported" style="display:none;">
+        <p>Your Device Is Not Supported By This Website</p>
+    </div>
+    <div class="first" style="display:none;">
         <div class="navbar">
             <h2 class="logo">Port<span>folio</span></h2>
             <ul>
@@ -47,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="second">
+    <div class="second" style="display:none;">
         <div class="left">
             <img src="Profile2.png">
         </div>
@@ -58,7 +79,7 @@
             <button class="btn3">Let's Talk</button>
         </div>
     </div>
-    <div class="third">
+    <div class="third" style="display:none;">
         <h1>Our Services</h1>
         <div class="services">
             <div>
@@ -81,11 +102,11 @@
             </div>
         </div>
     </div>
-    <div class="fourth">
+    <div class="fourth" style="display:none;">
         <h1>Let Me Get You A Beautiful Website</h1>
         <button class="btn5">Hire Me</button>
     </div>
-    <div class="fifth">
+    <div class="fifth" style="display:none;">
         <h1>Justin Brill<span>iant Thendri</span></h1>
         <ul>
             <li>
